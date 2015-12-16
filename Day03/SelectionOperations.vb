@@ -16,6 +16,7 @@
         ' assume you have created 10 pads in PartBody 
         ' if total length of the pad is greater than the oversize limit , color the pad red
         ' if less than the limit color the pad green
+        ' if equal to the limit then color blue
     End Sub
 
     Public Sub SelectAndTurnRed(pd As MECMOD.PartDocument, toChange As INFITF.AnyObject)
