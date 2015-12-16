@@ -60,6 +60,21 @@
         ' odd bodies have the names : 1_body, 3_body ...
         ' even bodies have the names : body_2, body_4 ...
 
+        'i guess you dont need the solution from me ? - smart enough to get the 2 done
+
+        ' now here we are assuming that there is a skecth in CATIA part already
+        ' on your machines before you write any code, you can draw a simple sketch in Partbody
+
+        Dim pSketch As MECMOD.Sketch
+        pSketch = pPartBody.Sketches.Item(1)
+
+        Dim pShapeFactory As PARTITF.ShapeFactory
+        pShapeFactory = pPart.ShapeFactory
+
+        Dim pPad As PARTITF.Pad
+        pPad =pShapeFactory.AddNewPad(pSketch, 10.0)
+        pPart.Update()
+
     End Sub
 
 End Module
