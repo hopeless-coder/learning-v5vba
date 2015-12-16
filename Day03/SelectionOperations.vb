@@ -17,6 +17,42 @@
         ' if total length of the pad is greater than the oversize limit , color the pad red
         ' if less than the limit color the pad green
         ' if equal to the limit then color blue
+
+        'let me try my hands at the ideal solution
+        ' .. you can shamelessly copy this :)
+
+        'getting to the body that contains all the pads
+
+        Dim pMainBody As MECMOD.Body
+        pMainBody = pd.Part.Bodies.Item(1)
+        Dim pThisPad As PARTITF.Pad
+        'lets prep the selection object here
+        Dim pSelection As INFITF.Selection
+        pSelection = pd.Selection
+        pSelection.Clear()
+        'now lets iterate for all the shapes that are in the Body 
+        For index = 1 To pMainBody.Shapes.Count
+            ' now we are blindly saying that all the shapes would be pads here .. 
+            'but that could be dangerous
+            ' we shall fix that later .. 
+            pThisPad = pMainBody.Shapes.Item(index)
+            pSelection.Add(pThisPad)
+            Dim totalHeight As Double
+            totalHeight = pThisPad.FirstLimit.Dimension.Value + pThisPad.SecondLimit.Dimension.Value
+            If totalHeight <> oversizeLimit Then
+                If totalHeight > oversizeLimit Then
+                    'color it red here
+                    pSelection.VisProperties.SetRealColor(255, 0, 0, 0)
+                Else
+                    pSelection.VisProperties.SetRealColor(0, 255, 0, 0)
+                End If
+            Else
+                pSelection.VisProperties.SetRealColor(0, 0, 255, 0)
+            End If
+            pSelection.Clear()
+        Next
+
+
     End Sub
 
     Public Sub SelectAndTurnRed(pd As MECMOD.PartDocument, toChange As INFITF.AnyObject)
