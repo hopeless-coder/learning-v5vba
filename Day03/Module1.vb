@@ -80,8 +80,8 @@
         ' see that changing the dimension is not as straightfwd as thought
         pPart.Update()
 
-        SelectionOperations.SelectAndDelete(pPartDoc, pPad)
+
 
     End Sub
-
+   
 End Module
