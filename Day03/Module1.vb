@@ -75,6 +75,13 @@
         pPad =pShapeFactory.AddNewPad(pSketch, 10.0)
         pPart.Update()
 
+        'changing the dimension on the second limit
+        pPad.SecondLimit.Dimension.Value = 20.0
+        ' see that changing the dimension is not as straightfwd as thought
+        pPart.Update()
+
+        SelectionOperations.SelectAndDelete(pPartDoc, pPad)
+
     End Sub
 
 End Module
