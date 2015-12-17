@@ -85,6 +85,7 @@
     <Compile Include="Pad.vb" />
     <Compile Include="SelectionOperations.vb" />
     <Compile Include="SpuriousCoins.vb" />
+    <Compile Include="WireframeSurfaces.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
