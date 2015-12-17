@@ -37,4 +37,18 @@ Module WireframeSurfaces
         Return plane
     End Function
 
+    Public Function ThreeDCircle(prt As Part, bd As HybridBody, _
+                                 centerpt As HybridShape, _
+                                 support As HybridShape, _
+                                 radius As Double) As HybridShapeCircleCtrRad
+        'this creates a 3D circle on a plane given the center and the radius
+        Dim pHShapeFac As HybridShapeFactory = prt.HybridShapeFactory
+        Dim circle As HybridShapeCircleCtrRad = pHShapeFac.AddNewCircleCtrRad( _
+            prt.CreateReferenceFromObject(centerpt), _
+            prt.CreateReferenceFromObject(support), _
+            True, radius)
+        bd.AppendHybridShape(circle)
+        prt.Update()
+        Return circle
+    End Function
 End Module

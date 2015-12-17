@@ -28,6 +28,9 @@ Module Module1
 
         Dim plane As HybridShapePlaneNormal =
             WireframeSurfaces.PlotPlaneNormal(pPart, pConstructionBody, line, pPt)
+
+        Dim circle As HybridShapeCircleCtrRad =
+         WireframeSurfaces.ThreeDCircle(pPart, pConstructionBody, pPt, plane, 10.0)
     End Sub
 
 End Module
