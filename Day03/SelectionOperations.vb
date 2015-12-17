@@ -1,6 +1,9 @@
-﻿Module SelectionOperations
+﻿Imports INFITF
+Imports MECMOD
+Imports PARTITF
+Module SelectionOperations
     Public Sub SelectAndDelete(pd As MECMOD.PartDocument, toDelete As INFITF.AnyObject)
-        Dim pSelection As INFITF.Selection
+        Dim pSelection As Selection
         pSelection = pd.Selection
         pSelection.Clear()
 
@@ -23,16 +26,16 @@
 
         'getting to the body that contains all the pads
 
-        Dim pMainBody As MECMOD.Body
+        Dim pMainBody As Body
         pMainBody = pd.Part.Bodies.Item(1)
 
         'lets prep the selection object here
-        Dim pSelection As INFITF.Selection
+        Dim pSelection As Selection
         pSelection = pd.Selection
         pSelection.Clear()
         'now lets iterate for all the shapes that are in the Body 
         For index = 1 To pMainBody.Shapes.Count
-            Dim pThisPad As PARTITF.Pad
+            Dim pThisPad As Pad
             If TypeOf pMainBody.Shapes.Item(index) Is PARTITF.Pad Then
                 pThisPad = pMainBody.Shapes.Item(index)
                 pSelection.Add(pThisPad)
@@ -59,7 +62,7 @@
     End Sub
 
     Public Sub SelectAndTurnRed(pd As MECMOD.PartDocument, toChange As INFITF.AnyObject)
-        Dim pSelection As INFITF.Selection
+        Dim pSelection As Selection
         pSelection = pd.Selection
         pSelection.Clear()
 
@@ -68,7 +71,7 @@
         pd.Part.Update()
     End Sub
 
-    Public Sub CopyPaste(pd As MECMOD.PartDocument, source As INFITF.AnyObject, target As INFITF.AnyObject)
+    Public Sub CopyPaste(pd As PartDocument, source As AnyObject, target As AnyObject)
 
     End Sub
 End Module

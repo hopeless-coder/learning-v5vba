@@ -1,21 +1,28 @@
-﻿Module Module1
+﻿Imports INFITF
+Imports MECMOD
+Imports PARTITF
+
+Module Module1
 
     Sub Main()
         'this is the handle to the application interface
-        Dim pApplication As INFITF.Application
+        Dim pApplication As Application
         'this is when we request the handle on catia application to windows
-        pApplication = GetObject(, "CATIA.Application")
-        If pApplication Is Nothing Then
-            'no catia application running on the machine
-            Console.WriteLine("we have not found the application running on your machine")
-            Exit Sub
-        End If
+        Try
+            pApplication = GetObject(, "CATIA.Application")
+        Catch ex As Exception
+            If pApplication Is Nothing Then
+                'no catia application running on the machine
+                Console.WriteLine("we have not found the application running on your machine")
+                Exit Sub
+            End If
+        End Try
         'good we have connected to catia
 
-        Dim pDocuments As INFITF.Documents
+        Dim pDocuments As Documents
         pDocuments = pApplication.Documents 'getting the documents collection
         Dim nameOfTheDoc = "Part2.CATPart"
-        Dim pDocument As INFITF.Document
+        Dim pDocument As Document
 
         For index = 1 To pDocuments.Count
             If pDocuments.Item(index).Name = nameOfTheDoc Then
@@ -25,16 +32,16 @@
         Next
         'start working on the document here
 
-        Dim pPartDoc As MECMOD.PartDocument
+        Dim pPartDoc As PartDocument
         pPartDoc = pDocument 'this is what is called as the downcasting
 
         Dim pPart As MECMOD.Part 'this is just the handle to the part
         pPart = pPartDoc.Part 'this is getting the part
 
-        Dim pBodies As MECMOD.Bodies
+        Dim pBodies As Bodies
         pBodies = pPart.Bodies
 
-        Dim pPartBody As MECMOD.Body
+        Dim pPartBody As Body
         pPartBody = pBodies.Item(1)
 
         pPartBody.Name = "Changed body name"
@@ -65,14 +72,14 @@
         ' now here we are assuming that there is a skecth in CATIA part already
         ' on your machines before you write any code, you can draw a simple sketch in Partbody
 
-        Dim pSketch As MECMOD.Sketch
+        Dim pSketch As Sketch
         pSketch = pPartBody.Sketches.Item(1)
 
-        Dim pShapeFactory As PARTITF.ShapeFactory
+        Dim pShapeFactory As ShapeFactory
         pShapeFactory = pPart.ShapeFactory
 
-        Dim pPad As PARTITF.Pad
-        pPad =pShapeFactory.AddNewPad(pSketch, 10.0)
+        Dim pPad As Pad
+        pPad = pShapeFactory.AddNewPad(pSketch, 10.0)
         pPart.Update()
 
         'changing the dimension on the second limit
@@ -83,5 +90,5 @@
 
 
     End Sub
-   
+
 End Module
