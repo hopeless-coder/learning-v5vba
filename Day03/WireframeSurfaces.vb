@@ -27,4 +27,14 @@ Module WireframeSurfaces
         Return line
 
     End Function
+
+    Public Function PlotPlaneNormal(prt As Part, bd As HybridBody, curve As HybridShape, endpt As HybridShape) As HybridShapePlaneNormal
+        Dim pHShapeFac As HybridShapeFactory = prt.HybridShapeFactory
+        Dim plane As HybridShapePlaneNormal = pHShapeFac.AddNewPlaneNormal( _
+            prt.CreateReferenceFromObject(curve), prt.CreateReferenceFromObject(endpt))
+        bd.AppendHybridShape(plane)
+        prt.Update()
+        Return plane
+    End Function
+
 End Module

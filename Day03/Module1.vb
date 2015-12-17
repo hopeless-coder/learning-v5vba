@@ -25,6 +25,9 @@ Module Module1
 
         Dim line As HybridShapeLinePtPt =
             WireframeSurfaces.PlotLinePtPt(pPart, pConstructionBody, pPt, pPt2)
+
+        Dim plane As HybridShapePlaneNormal =
+            WireframeSurfaces.PlotPlaneNormal(pPart, pConstructionBody, line, pPt)
     End Sub
 
 End Module
