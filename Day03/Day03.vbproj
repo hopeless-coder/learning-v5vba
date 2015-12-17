@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="Pad.vb" />
     <Compile Include="SelectionOperations.vb" />
+    <Compile Include="SpaceAnalysis.vb" />
     <Compile Include="SpuriousCoins.vb" />
     <Compile Include="WireframeSurfaces.vb" />
   </ItemGroup>
