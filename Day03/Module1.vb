@@ -18,9 +18,13 @@ Module Module1
         Dim pConstructionBody As HybridBody =
         WireframeSurfaces.CreateHybBody("construction body", pPart)
         Dim pPt As HybridShapePointCoord =
-            WireframeSurfaces.CreatePoint(pPart, pConstructionBody, 0, 0, 0)
+        WireframeSurfaces.CreatePoint(pPart, pConstructionBody, 0, 0, 0)
 
+        Dim pPt2 As HybridShapePointCoord =
+        WireframeSurfaces.CreatePoint(pPart, pConstructionBody, 0, 0, 100)
 
+        Dim line As HybridShapeLinePtPt =
+            WireframeSurfaces.PlotLinePtPt(pPart, pConstructionBody, pPt, pPt2)
     End Sub
 
 End Module
