@@ -14,8 +14,13 @@ Module Module1
             Dim xlRange As Range = xlSheet.Cells(1, 1)
             Console.WriteLine(xlRange.Value.ToString())
             xlRange.Value = "this is the changed value from automation"
+
             pXlWkBk.Save()
             pXlWkBk.Close()
+            'and this is how you can select multiple cell range
+            Dim multipleCells As Range = xlSheet.Range(xlSheet.Cells(1, 1), xlSheet.Cells(1, 10))
+            'how many cells are selected here ?
+
         End If
         pXlApp.Quit()
         Console.ReadLine()
