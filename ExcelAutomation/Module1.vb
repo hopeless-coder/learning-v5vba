@@ -13,10 +13,13 @@ Module Module1
             Dim xlSheet As Worksheet = pXlWkBk.Worksheets.Item(1)
             Dim xlRange As Range = xlSheet.Cells(1, 1)
             Console.WriteLine(xlRange.Value.ToString())
-
+            xlRange.Value = "this is the changed value from automation"
+            pXlWkBk.Save()
+            pXlWkBk.Close()
         End If
-        Console.ReadLine()
         pXlApp.Quit()
+        Console.ReadLine()
+
     End Sub
 
 End Module
