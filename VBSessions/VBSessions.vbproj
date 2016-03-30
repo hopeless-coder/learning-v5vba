@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Exercise.vb" />
     <Compile Include="LogicBlocks.vb" />
-    <Compile Include="LogicDemo.vb" />
+    <Compile Include="Logic.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

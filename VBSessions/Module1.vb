@@ -3,8 +3,8 @@
     Sub Main()
         'LogicBlocks.MySub()
         'Exercise.ex()
-        LogicDemo.CalculateAge("Jon", 40.0, 110.0)
-        LogicDemo.MySub()
+        Logic.CalculateAge("Jon", 40.0, 110.0)
+        Logic.MySub()
         'This is a comment
         ' What is a program?
         ' Set of instructions
