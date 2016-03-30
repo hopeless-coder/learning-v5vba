@@ -2,7 +2,9 @@
 
     Sub Main()
         'LogicBlocks.MySub()
+        'Exercise.ex()
         LogicDemo.CalculateAge("Jon", 40.0, 110.0)
+        LogicDemo.MySub()
         'This is a comment
         ' What is a program?
         ' Set of instructions
@@ -136,7 +138,7 @@
         pColl.Add(90)
         pColl.Add("Some more")
         pColl.Add(100, "Number")
-        ' pColl.Add(20, , 3, 1) ' as good as adding an item at index 2
+        'pColl.Add(20, , 3, 1) ' as good as adding an item at index 2
         'Console.WriteLine(pColl)
         Console.WriteLine("Retreieving the values using keys in collection:" & pColl.Item("Number"))
         Console.WriteLine("The first item of collection is:" & pColl.Item(1))
