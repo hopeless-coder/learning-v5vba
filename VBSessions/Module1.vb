@@ -1,6 +1,8 @@
 ﻿Module Module1
 
     Sub Main()
+        'LogicBlocks.MySub()
+        LogicDemo.CalculateAge("Jon", 40.0, 110.0)
         'This is a comment
         ' What is a program?
         ' Set of instructions
