@@ -134,7 +134,7 @@
         pColl.Add(90)
         pColl.Add("Some more")
         pColl.Add(100, "Number")
-        ' pColl.Add(20, , 3, 1)
+        ' pColl.Add(20, , 3, 1) ' as good as adding an item at index 2
         'Console.WriteLine(pColl)
         Console.WriteLine("Retreieving the values using keys in collection:" & pColl.Item("Number"))
         Console.WriteLine("The first item of collection is:" & pColl.Item(1))
