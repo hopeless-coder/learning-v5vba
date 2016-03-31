@@ -1,6 +1,41 @@
 ﻿Module Module1
 
     Sub Main()
+        'instantiate  a class/ making objects
+        'Dim obj As New Animal
+        'obj.Walk()
+
+        'Dim obj2 As New Animal("Bruno")
+        'obj2.Walk()
+
+        'Dim catObj As New Cat ' Handle of the child class, creating an object of the child class
+        'catObj.Color = "Brown"
+        'catObj.Breed = "Something"
+        'catObj.Walk()
+        'catObj.DrinksMilk()
+
+        Dim baseobj As Animal ' handle to the base class
+        Dim childobj As New Cat ' object of the child class
+        baseobj = childobj ' assignment of specific class to generic class
+        baseobj.Walk()
+        CType(baseobj, Cat).DrinksMilk()
+
+        ' The following is illegal
+        'Dim childObj2 As Cat ' specific class handle/ variable
+        'Dim baseObj2 As New Animal ' generic class object
+        'childObj2 = baseObj2 ' assignment of generic to specifc class
+        'childObj2.Walk()
+        'childObj2.DrinksMilk()
+
+        'obj.SetName("My Animal")
+        'Dim animalName As String = obj.GetName()
+        'Console.WriteLine(animalName)
+        ' obj.Age = 1
+        'Console.WriteLine(obj.Age)
+        'obj.Color = "Red"
+        'Console.WriteLine(obj.Color)
+
+
         'LogicBlocks.MySub()
         'Exercise.ex()
         Logic.CalculateAge("Jon", 40.0, 110.0)
