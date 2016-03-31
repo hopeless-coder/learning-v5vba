@@ -73,6 +73,10 @@
     <Compile Include="Day02\Animal.vb" />
     <Compile Include="Day02\Cat.vb" />
     <Compile Include="Day02\Dog.vb" />
+    <Compile Include="Classes\Geom.vb" />
+    <Compile Include="Classes\IDelete.vb" />
+    <Compile Include="Classes\IDraw.vb" />
+    <Compile Include="Classes\Line.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -88,6 +92,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Classes\Pad.vb" />
+    <Compile Include="Classes\Plane.vb" />
+    <Compile Include="Classes\Pocket.vb" />
+    <Compile Include="Classes\Point.vb" />
+    <Compile Include="Classes\PrinciplePlane.vb" />
+    <Compile Include="Classes\ThreeD.vb" />
+    <Compile Include="Classes\TwoD.vb" />
+    <Compile Include="Classes\UserPlane.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -100,6 +112,7 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
