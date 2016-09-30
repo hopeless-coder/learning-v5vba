@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>day01_console.collection_join</StartupObject>
     <RootNamespace>day01_console</RootNamespace>
     <AssemblyName>day01-console</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -68,7 +68,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="collection_join.vb" />
+    <Compile Include="nativevars_funcs.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -84,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="objectvars.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

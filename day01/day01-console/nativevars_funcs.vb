@@ -1,4 +1,4 @@
-﻿Module Module1
+﻿Module nativevars_funcs
 
     Function DoThisAsWell(msg As String, lengthFromLeft As Integer) As String
         Dim result As String
