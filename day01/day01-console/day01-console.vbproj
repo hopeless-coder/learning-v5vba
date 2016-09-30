@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>day01_console.collection_join</StartupObject>
+    <StartupObject>day01_console.objectvars</StartupObject>
     <RootNamespace>day01_console</RootNamespace>
     <AssemblyName>day01-console</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="collection_join.vb" />
+    <Compile Include="Employee.vb" />
     <Compile Include="nativevars_funcs.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
