@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "day01", "day01\day01.vbproj
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "day01-console", "day01-console\day01-console.vbproj", "{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "catautomation", "catautomation\catautomation.vbproj", "{DA05E002-59D2-4C3D-89D7-FD2A4C4929BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1EBB4DB-F7B0-484D-9D6C-B0CBF0D8867A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA05E002-59D2-4C3D-89D7-FD2A4C4929BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA05E002-59D2-4C3D-89D7-FD2A4C4929BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA05E002-59D2-4C3D-89D7-FD2A4C4929BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA05E002-59D2-4C3D-89D7-FD2A4C4929BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
