@@ -3,6 +3,7 @@ Imports MECMOD
 Imports PARTITF
 Imports HybridShapeTypeLib
 Imports SPATypeLib
+Imports KnowledgewareTypeLib
 Public Class Form1
     Private pApplication As Application
     Private pDocument As Document
@@ -201,7 +202,14 @@ Public Class Form1
         Dim measurable As Measurable
 
         measurable = wkBench.GetMeasurable(measureRef)
-        MsgBox(measurable.Volume)
+
+        Dim params As Parameters
+        params = pPart.Parameters
+        params.CreateReal("Volume_cyl", measurable.Volume)
+        pPart.Update()
     End Sub
 
+    Public Sub CreateParam()
+
+    End Sub
 End Class
