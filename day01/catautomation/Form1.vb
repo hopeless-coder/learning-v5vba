@@ -2,6 +2,7 @@
 Imports MECMOD
 Imports PARTITF
 Imports HybridShapeTypeLib
+Imports SPATypeLib
 Public Class Form1
     Private pApplication As Application
     Private pDocument As Document
@@ -32,7 +33,7 @@ Public Class Form1
         'pPart.Update()
         'CreateTenBodies()
         'CreatePadFromSketch()
-        CreatePointOnCurve()
+        Measure()
     End Sub
 
     Public Sub CreateTenBodies()
@@ -187,5 +188,20 @@ Public Class Form1
         pPart.Update()
     End Sub
 
+
+    Public Sub Measure()
+        Dim wkBench As SPAWorkbench
+        wkBench = pPartDocument.GetWorkbench("SPAWorkbench")
+        Dim measureRef As Reference
+        Dim pPad As Shape
+
+        pPad = pPart.MainBody.Shapes.Item(1)
+
+        measureRef = pPart.CreateReferenceFromObject(pPad)
+        Dim measurable As Measurable
+
+        measurable = wkBench.GetMeasurable(measureRef)
+        MsgBox(measurable.Volume)
+    End Sub
 
 End Class
