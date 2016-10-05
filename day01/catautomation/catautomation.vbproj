@@ -137,15 +137,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="CATRma">
-      <Guid>{9BE25E70-7167-11D6-8054-0030F113D1BF}</Guid>
-      <VersionMajor>0</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="DRAFTINGITF">
       <Guid>{73130905-462A-11D1-A26A-0000F87546A1}</Guid>
       <VersionMajor>0</VersionMajor>
@@ -157,6 +148,15 @@
     </COMReference>
     <COMReference Include="GenKwe">
       <Guid>{00B6EC0E-BCFE-11D2-9B5B-006094EB7ECA}</Guid>
+      <VersionMajor>0</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="HybridShapeTypeLib">
+      <Guid>{87EE735C-DF70-11D1-8556-0060941979CE}</Guid>
       <VersionMajor>0</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
@@ -182,8 +182,8 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="MECMOD">
-      <Guid>{0D90A5C9-3B08-11D1-A26C-0000F87546FD}</Guid>
+    <COMReference Include="LAYOUT2DITF">
+      <Guid>{4480F2EC-29DE-443A-A706-3587C3758350}</Guid>
       <VersionMajor>0</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
@@ -191,8 +191,8 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="NavigatorTypeLib">
-      <Guid>{E6BCB304-3260-11D4-9465-006094EB3826}</Guid>
+    <COMReference Include="MECMOD">
+      <Guid>{0D90A5C9-3B08-11D1-A26C-0000F87546FD}</Guid>
       <VersionMajor>0</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

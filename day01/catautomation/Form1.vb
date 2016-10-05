@@ -1,6 +1,7 @@
 ﻿Imports INFITF
 Imports MECMOD
 Imports PARTITF
+Imports HybridShapeTypeLib
 Public Class Form1
     Private pApplication As Application
     Private pDocument As Document
@@ -30,7 +31,8 @@ Public Class Form1
         'newBody.Name = "This is the fresh body added"
         'pPart.Update()
         'CreateTenBodies()
-        CreatePadFromSketch()
+        'CreatePadFromSketch()
+        CreatePointOnCurve()
     End Sub
 
     Public Sub CreateTenBodies()
@@ -59,4 +61,131 @@ Public Class Form1
 
         pPart.Update()
     End Sub
+
+    Public Sub UsingTheSelection()
+        Dim pSelection As Selection
+        pSelection = pPartDocument.Selection
+        pSelection.Clear()
+
+        Dim pBody As Body
+        pBody = pPart.Bodies.Item(4)
+
+        pSelection.Add(pBody)
+        pSelection.Delete()
+
+        pPart.Update()
+    End Sub
+
+    Public Sub AddDeleteBodies()
+        'first add 10 bodies
+        'then delete all the bodies added.
+        Dim pBody As Body
+        For index = 1 To 10
+            pBody = pPart.Bodies.Add()
+        Next
+        Dim pSelection As Selection
+        pSelection = pPartDocument.Selection
+        pSelection.Clear()
+        For index = 11 To 2 Step -1
+            pSelection.Add(pPart.Bodies.Item(index))
+            pSelection.Delete()
+        Next
+
+        pPart.Update()
+    End Sub
+
+    Public Sub CreateRedPad()
+        Dim pSelection As Selection
+
+        pSelection = pPartDocument.Selection
+        pSelection.Clear()
+
+        Dim pSketch As Sketch
+        pSketch = pPart.MainBody.Sketches.Item(1)
+
+        Dim pShapeFac As ShapeFactory
+        pShapeFac = pPart.ShapeFactory
+
+        Dim pPad As Pad
+        pPad = pShapeFac.AddNewPad(pSketch, 100.0)
+
+        pSelection.Add(pPad)
+        pSelection.VisProperties.SetRealColor(255, 0, 0, 0)
+        pPart.Update()
+    End Sub
+
+    Public Function CreateHB(name As String) As HybridBody
+        Dim pHB As HybridBody
+        pHB = pPart.HybridBodies.Add()
+        pHB.Name = name
+        Return pHB
+    End Function
+    Public Function SearchHBByName(name As String) As HybridBody
+        Dim pHB As HybridBody
+        For Each hb In pPart.HybridBodies
+            If hb.Name = name Then
+                pHB = hb
+                Exit For
+            End If
+        Next
+        Return pHB
+    End Function
+    Public Function CreatePoint(x As Double, y As Double, z As Double) As HybridShapePointCoord
+        Dim pHB As HybridBody
+        pHB = SearchHBByName("Construction")
+        If pHB Is Nothing Then
+            pHB = CreateHB("Construction")
+        End If
+
+        Dim pFac As HybridShapeFactory
+        pFac = pPart.HybridShapeFactory
+
+        Dim pPoint As HybridShapePointCoord
+        pPoint = pFac.AddNewPointCoord(x, y, z)
+        pHB.AppendHybridShape(pPoint)
+
+        pPart.Update()
+        Return pPoint
+    End Function
+
+    Public Function CreateLineBtwPoints() As HybridShapeLinePtPt
+
+        Dim pFac As HybridShapeFactory
+        pFac = pPart.HybridShapeFactory
+
+        Dim pt1, pt2 As HybridShapePointCoord
+        pt1 = CreatePoint(0, 0, 0)
+        pt2 = CreatePoint(0, 0, 100.0)
+
+        Dim pConstrHb As HybridBody
+        pConstrHb = SearchHBByName("Construction")
+        Dim pt1Ref, pt2Ref As Reference
+        pt1Ref = pPart.CreateReferenceFromObject(pt1)
+        pt2Ref = pPart.CreateReferenceFromObject(pt2)
+
+        Dim pLine As HybridShapeLinePtPt
+        pLine = pFac.AddNewLinePtPt(pt1Ref, pt2Ref)
+
+        pConstrHb.AppendHybridShape(pLine)
+        pPart.Update()
+        Return pLine
+    End Function
+
+    Public Sub CreatePointOnCurve()
+        Dim pFac As HybridShapeFactory
+        pFac = pPart.HybridShapeFactory
+        Dim pHB As HybridBody
+
+
+        Dim pLineRef As Reference
+        pLineRef = pPart.CreateReferenceFromObject(CreateLineBtwPoints())
+        pHB = SearchHBByName("Construction")
+        Dim pPtOnCurve As HybridShapePointOnCurve
+        pPtOnCurve = pFac.AddNewPointOnCurveFromPercent(pLineRef, 0.5, False)
+        pHB.AppendHybridShape(pPtOnCurve)
+
+        pPart.Update()
+    End Sub
+
+
 End Class
